@@ -1,0 +1,397 @@
+
+asa2-ext-right# 
+asa2-ext-right# 
+asa2-ext-right# sh acc
+asa2-ext-right# sh access-list 
+access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
+            alert-interval 300
+access-list dmz_access_out; 7 elements; name hash: 0x256e2e30
+access-list dmz_access_out line 1 extended permit ip any any (hitcnt=0) 0x53babf9a 
+access-list dmz_access_out line 2 extended permit ip object-group CoreCarePortalSrv-GRP object-group CoreCarePortal-GRP 0xcbf16bb3 
+  access-list dmz_access_out line 2 extended permit ip host 208.97.209.16 host 212.15.88.0 (hitcnt=0) 0x68970f23 
+  access-list dmz_access_out line 2 extended permit ip host 208.97.209.16 host 80.0.249.64 (hitcnt=0) 0xef25485f 
+  access-list dmz_access_out line 2 extended permit ip host 208.97.209.16 host 208.97.227.225 (hitcnt=0) 0x96211ac8 
+  access-list dmz_access_out line 2 extended permit ip host 208.97.209.47 host 212.15.88.0 (hitcnt=0) 0xca24ce21 
+  access-list dmz_access_out line 2 extended permit ip host 208.97.209.47 host 80.0.249.64 (hitcnt=0) 0xb9962d3f 
+  access-list dmz_access_out line 2 extended permit ip host 208.97.209.47 host 208.97.227.225 (hitcnt=0) 0x637f0993 
+access-list untust_access_in; 1 elements; name hash: 0xa18b1eaf
+access-list untust_access_in line 1 extended permit tcp any host 208.97.209.51 eq 1935 (hitcnt=0) 0xb1eca9f8 
+access-list untrust_access_in; 346 elements; name hash: 0x5a4f43e8
+access-list untrust_access_in line 1 extended permit icmp any host 208.97.209.87 (hitcnt=157) 0x5c49796f 
+access-list untrust_access_in line 2 extended deny ip host 20.1.1.13 any (hitcnt=0) 0xbd28af68 
+access-list untrust_access_in line 3 extended deny ip 146.185.220.0 255.255.254.0 any (hitcnt=0) 0x82e893fc 
+access-list untrust_access_in line 4 extended deny ip host 194.28.115.150 host 208.97.209.2 (hitcnt=0) 0x55da0e18 
+access-list untrust_access_in line 5 extended permit gre host 104.129.194.34 host 66.54.173.74 (hitcnt=0) 0xa81ab8d5 
+access-list untrust_access_in line 6 extended permit gre host 199.168.151.9 host 66.54.173.74 (hitcnt=0) 0x3031eee0 
+access-list untrust_access_in line 7 extended permit object-group DM_INLINE_SERVICE_1 object-group VPN_Allow_grp interface untrust 0x102078f2 
+  access-list untrust_access_in line 7 extended permit esp host 109.231.219.133 interface untrust (hitcnt=243) 0x2cc8071d 
+  access-list untrust_access_in line 7 extended permit esp host 208.0.20.89 interface untrust (hitcnt=0) 0x0edffe4a 
+  access-list untrust_access_in line 7 extended permit esp host 38.98.195.126 interface untrust (hitcnt=246) 0x4bfbdbda 
+  access-list untrust_access_in line 7 extended permit esp host 63.175.28.145 interface untrust (hitcnt=243) 0xd3ce04a9 
+  access-list untrust_access_in line 7 extended permit esp host 38.98.197.194 interface untrust (hitcnt=245) 0x32e06a93 
+  access-list untrust_access_in line 7 extended permit esp host 203.176.97.70 interface untrust (hitcnt=243) 0x1539b6c1 
+  access-list untrust_access_in line 7 extended permit esp host 38.99.216.194 interface untrust (hitcnt=0) 0x2d340fd2 
+  access-list untrust_access_in line 7 extended permit esp host 63.238.216.14 interface untrust (hitcnt=267) 0x0eeef442 
+  access-list untrust_access_in line 7 extended permit udp host 109.231.219.133 interface untrust eq isakmp (hitcnt=235) 0x8a48042a 
+  access-list untrust_access_in line 7 extended permit udp host 208.0.20.89 interface untrust eq isakmp (hitcnt=3065) 0x4c15a356 
+  access-list untrust_access_in line 7 extended permit udp host 38.98.195.126 interface untrust eq isakmp (hitcnt=43) 0x625a4f3b 
+  access-list untrust_access_in line 7 extended permit udp host 63.175.28.145 interface untrust eq isakmp (hitcnt=4) 0xbf55ed86 
+  access-list untrust_access_in line 7 extended permit udp host 38.98.197.194 interface untrust eq isakmp (hitcnt=235) 0x96e977d5 
+  access-list untrust_access_in line 7 extended permit udp host 203.176.97.70 interface untrust eq isakmp (hitcnt=1) 0x8300a510 
+  access-list untrust_access_in line 7 extended permit udp host 38.99.216.194 interface untrust eq isakmp (hitcnt=0) 0xed4b693c 
+  access-list untrust_access_in line 7 extended permit udp host 63.238.216.14 interface untrust eq isakmp (hitcnt=239) 0x147a88a9 
+access-list untrust_access_in line 8 extended permit tcp any object-group https_servers-grp eq https 0x89eb0d33 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.30 eq https (hitcnt=149) 0x4449f9be 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.32 eq https (hitcnt=69) 0xe3556b6e 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.13 eq https (hitcnt=62) 0xc5f28fd8 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.14 eq https (hitcnt=82) 0x829ccea8 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.18 eq https (hitcnt=62) 0x0ba1f7ae 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.19 eq https (hitcnt=70) 0xc7a9eb2d 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.21 eq https (hitcnt=69) 0x99123dfd 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.22 eq https (hitcnt=84) 0x814e83de 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.26 eq https (hitcnt=69) 0xdb6b34f4 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.46 eq https (hitcnt=34606) 0x0bf86dad 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.5 eq https (hitcnt=214) 0xc30ef556 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.58 eq https (hitcnt=522) 0xc22cfa42 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.77 eq https (hitcnt=73) 0x3ced99ae 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.78 eq https (hitcnt=123) 0xd2eb9abb 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.86 eq https (hitcnt=131) 0x7dcd32c8 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.2 eq https (hitcnt=8481) 0x4f3deef1 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.11 eq https (hitcnt=111) 0x21c2aa19 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.12 eq https (hitcnt=67) 0x3dba972a 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.90 eq https (hitcnt=106) 0xfffa4c44 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.15 eq https (hitcnt=74) 0x6618ba16 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.3 eq https (hitcnt=4931783) 0x3b518001 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.100 eq https (hitcnt=71) 0x1f3324fa 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.102 eq https (hitcnt=72) 0x56a9e7fe 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.103 eq https (hitcnt=167) 0x3efa2f07 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.17 eq https (hitcnt=61) 0x04ac7352 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.20 eq https (hitcnt=55) 0x1e683c9e 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.29 eq https (hitcnt=1226) 0x44299151 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.33 eq https (hitcnt=80) 0xe23fa79b 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.38 eq https (hitcnt=446) 0x74a12a9b 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.42 eq https (hitcnt=62) 0xe9190b60 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.43 eq https (hitcnt=134) 0x63440063 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.44 eq https (hitcnt=158) 0x59bb64fa 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.45 eq https (hitcnt=490244) 0x2e0e7ea9 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.6 eq https (hitcnt=71) 0xe28d7628 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.62 eq https (hitcnt=66) 0x8651f48c 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.68 eq https (hitcnt=5657) 0x84ff7f56 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.7 eq https (hitcnt=74) 0x37f08fa8 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.71 eq https (hitcnt=63) 0xbabc907d 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.72 eq https (hitcnt=70) 0x08a78837 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.82 eq https (hitcnt=2387) 0xcfd0039a 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.96 eq https (hitcnt=107) 0xa99e1180 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.99 eq https (hitcnt=35219) 0xd51c1c61 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.81 eq https (hitcnt=64) 0x18df13a4 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.84 eq https (hitcnt=62) 0x2dcc980c 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.28 eq https (hitcnt=67) 0xe4ae282d 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.122 eq https (hitcnt=78) 0x64d7b50d 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.56 eq https (hitcnt=64) 0x74491a83 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.48 eq https (hitcnt=78) 0x15ecfea7 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.49 eq https (hitcnt=212) 0x0cda346e 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.85 eq https (hitcnt=62) 0x22379076 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.10 eq https (hitcnt=6613) 0x935463e2 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.9 eq https (hitcnt=5558) 0xee05c509 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.106 eq https (hitcnt=171) 0x756dd3ac 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.104 eq https (hitcnt=61) 0xd5ee035e 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.105 eq https (hitcnt=7869) 0xba570867 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.107 eq https (hitcnt=3797363) 0x732e7cdc 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.108 eq https (hitcnt=110) 0x7b4bdc6b 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.109 eq https (hitcnt=4205) 0xa7abc24a 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.92 eq https (hitcnt=137) 0xf21a41f8 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.53 eq https (hitcnt=72) 0x51012c35 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.111 eq https (hitcnt=77) 0x8bde33e9 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.57 eq https (hitcnt=79) 0xbedb8a03 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.63 eq https (hitcnt=108102) 0xd63d55e1 
+  access-list untrust_access_in line 8 extended permit tcp any host 208.97.209.114 eq https (hitcnt=5805) 0xf5729712 
+access-list untrust_access_in line 9 extended permit tcp any object-group ftp_servers-grp eq ftp 0xe6f0f059 
+  access-list untrust_access_in line 9 extended permit tcp any host 208.97.209.11 eq ftp (hitcnt=16) 0xf956f380 
+  access-list untrust_access_in line 9 extended permit tcp any host 208.97.209.12 eq ftp (hitcnt=11) 0x63991936 
+  access-list untrust_access_in line 9 extended permit tcp any host 208.97.209.90 eq ftp (hitcnt=16) 0x3748334b 
+  access-list untrust_access_in line 9 extended permit tcp any host 208.97.209.69 eq ftp (hitcnt=135) 0x86c7a0af 
+access-list untrust_access_in line 10 extended permit tcp any object-group web.8006-grp eq 8006 0x26e872c1 
+  access-list untrust_access_in line 10 extended permit tcp any host 208.97.209.81 eq 8006 (hitcnt=0) 0xfe6a718a 
+access-list untrust_access_in line 11 extended permit tcp any object-group web.8078-grp eq 8078 0x0ce4ad8f 
+  access-list untrust_access_in line 11 extended permit tcp any host 208.97.209.2 eq 8078 (hitcnt=2) 0x9ef94a53 
+access-list untrust_access_in line 12 extended permit tcp any object-group web.8088-grp eq 8088 0x7f74cd3c 
+  access-list untrust_access_in line 12 extended permit tcp any host 208.97.209.81 eq 8088 (hitcnt=3) 0x57fa80ea 
+  access-list untrust_access_in line 12 extended permit tcp any host 208.97.209.20 eq 8088 (hitcnt=4) 0xda941f52 
+access-list untrust_access_in line 13 extended permit tcp any object-group web.95-grp eq 95 0x4a9617f5 
+  access-list untrust_access_in line 13 extended permit tcp any host 208.97.209.32 eq 95 (hitcnt=0) 0xb85cdb1a 
+access-list untrust_access_in line 14 extended permit tcp object-group CoreCarePortal-GRP object-group CoreCarePortalSrv-GRP eq https 0x4decd499 
+  access-list untrust_access_in line 14 extended permit tcp host 212.15.88.0 host 208.97.209.16 eq https (hitcnt=0) 0x5ce72785 
+  access-list untrust_access_in line 14 extended permit tcp host 212.15.88.0 host 208.97.209.47 eq https (hitcnt=0) 0x743f4ca2 
+  access-list untrust_access_in line 14 extended permit tcp host 80.0.249.64 host 208.97.209.16 eq https (hitcnt=0) 0x6de3afbf 
+  access-list untrust_access_in line 14 extended permit tcp host 80.0.249.64 host 208.97.209.47 eq https (hitcnt=0) 0x7b9f5afd 
+  access-list untrust_access_in line 14 extended permit tcp host 208.97.227.225 host 208.97.209.16 eq https (hitcnt=0) 0x61c324bf 
+  access-list untrust_access_in line 14 extended permit tcp host 208.97.227.225 host 208.97.209.47 eq https (hitcnt=0) 0x60859602 
+access-list untrust_access_in line 15 extended permit tcp any object-group sftp-grp eq ssh 0xa56e91bd 
+  access-list untrust_access_in line 15 extended permit tcp any host 208.97.209.67 eq ssh (hitcnt=20161) 0xe4a274e6 
+access-list untrust_access_in line 16 extended permit tcp any object-group mom_server eq 51908 0x55369f13 
+  access-list untrust_access_in line 16 extended permit tcp any host 208.97.209.97 eq 51908 (hitcnt=0) 0x56002cc9 
+access-list untrust_access_in line 17 extended permit tcp any object-group urchin eq 9999 0x2e8abacc 
+  access-list untrust_access_in line 17 extended permit tcp any host 208.97.209.121 eq 9999 (hitcnt=7) 0x07306d23 
+access-list untrust_access_in line 18 extended permit tcp any object-group rdp-grp eq 3389 0x3a7159e0 
+  access-list untrust_access_in line 18 extended permit tcp any host 208.97.209.31 eq 3389 (hitcnt=156) 0x1b3a77fa 
+  access-list untrust_access_in line 18 extended permit tcp any host 208.97.209.55 eq 3389 (hitcnt=135416) 0x23556661 
+  access-list untrust_access_in line 18 extended permit tcp any host 208.97.209.88 eq 3389 (hitcnt=206049) 0x78cb9f08 
+  access-list untrust_access_in line 18 extended permit tcp any host 208.97.209.113 eq 3389 (hitcnt=123) 0xb55a4317 
+access-list untrust_access_in line 19 extended permit tcp any object-group webtrends-grp eq 7099 0xfd904379 
+  access-list untrust_access_in line 19 extended permit tcp any host 208.97.209.91 eq 7099 (hitcnt=0) 0x5dc0ac64 
+access-list untrust_access_in line 20 extended deny ip any object-group MAL_Suspect-grp 0xc8652867 
+  access-list untrust_access_in line 20 extended deny ip any host 61.129.251.168 (hitcnt=0) 0xb9ce2495 
+  access-list untrust_access_in line 20 extended deny ip any host 38.98.195.66 (hitcnt=0) 0xa039ceb5 
+access-list untrust_access_in line 21 extended permit tcp any object-group http_servers-grp eq www 0x031ff172 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.81 eq www (hitcnt=246) 0x82a8e599 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.31 eq www (hitcnt=217) 0xa44d535f 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.55 eq www (hitcnt=209) 0x08116b98 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.91 eq www (hitcnt=521) 0x66246f6f 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.30 eq www (hitcnt=303) 0xd18e1327 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.2 eq www (hitcnt=201295) 0x1b31906d 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.11 eq www (hitcnt=1659) 0x5d0dea60 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.12 eq www (hitcnt=221) 0xfbc5132e 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.90 eq www (hitcnt=204) 0x6efadca7 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.24 eq www (hitcnt=901) 0x88614930 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.27 eq www (hitcnt=234) 0x994fac15 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.40 eq www (hitcnt=220) 0xc8a66183 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.8 eq www (hitcnt=215) 0x6a05f9fa 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.85 eq www (hitcnt=195) 0xb7b26731 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.94 eq www (hitcnt=241) 0x60de6374 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.3 eq www (hitcnt=44785) 0x2fe76e07 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.100 eq www (hitcnt=211) 0xd1b14ba9 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.102 eq www (hitcnt=222) 0x9e61b98d 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.103 eq www (hitcnt=489) 0xd859405c 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.17 eq www (hitcnt=236) 0xf1f91623 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.20 eq www (hitcnt=214) 0x8471896b 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.29 eq www (hitcnt=4284) 0xc1c46f0c 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.33 eq www (hitcnt=220) 0xae23690c 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.38 eq www (hitcnt=12993) 0x0a9358bc 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.42 eq www (hitcnt=235) 0x8379a4f5 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.43 eq www (hitcnt=444) 0x4057f2e4 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.44 eq www (hitcnt=502) 0x6eec103c 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.45 eq www (hitcnt=6392) 0xcbde7bda 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.6 eq www (hitcnt=218) 0x4ba2da46 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.62 eq www (hitcnt=230) 0x53f38d74 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.68 eq www (hitcnt=6589) 0xce5b9662 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.7 eq www (hitcnt=235) 0x7abdf6dd 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.71 eq www (hitcnt=247) 0x7a256f18 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.72 eq www (hitcnt=5034) 0xca80f5a7 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.82 eq www (hitcnt=709) 0x9f376198 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.96 eq www (hitcnt=1024) 0xc2e49cac 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.99 eq www (hitcnt=1691) 0x838eebe8 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.34 eq www (hitcnt=480) 0xfdf880fe 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.35 eq www (hitcnt=227) 0x78761e70 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.98 eq www (hitcnt=233) 0xd465a7c5 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.84 eq www (hitcnt=442) 0x0663adbc 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.28 eq www (hitcnt=448) 0x7dbafa27 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.69 eq www (hitcnt=205) 0x2bc1176b 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.56 eq www (hitcnt=230) 0xcc10be64 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.48 eq www (hitcnt=230) 0xa867cca5 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.49 eq www (hitcnt=537) 0x94e61a55 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.58 eq www (hitcnt=10748) 0x11d79ea5 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.9 eq www (hitcnt=7240) 0x193e4aaf 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.106 eq www (hitcnt=449) 0xb4d852b5 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.104 eq www (hitcnt=225) 0x2391bd1d 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.105 eq www (hitcnt=1941) 0x502f1113 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.107 eq www (hitcnt=39679) 0xb1f83190 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.108 eq www (hitcnt=552) 0x6152abb3 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.109 eq www (hitcnt=10294) 0x7b474396 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.92 eq www (hitcnt=459) 0x99981fd0 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.53 eq www (hitcnt=219) 0x0cf2b533 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.112 eq www (hitcnt=11288) 0xc864ed5f 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.57 eq www (hitcnt=236) 0x90b1d2b5 
+  access-list untrust_access_in line 21 extended permit tcp any host 208.97.209.114 eq www (hitcnt=6291) 0x555eb442 
+access-list untrust_access_in line 22 extended permit icmp any object-group icmp_allow-grp 0x6dc7a1a3 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.31 (hitcnt=155) 0xe4cd5ede 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.55 (hitcnt=229) 0x656e8bf7 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.91 (hitcnt=240) 0xc316f53c 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.30 (hitcnt=222) 0xc5ff0156 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.13 (hitcnt=229) 0x26ef6f29 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.14 (hitcnt=264) 0x100c4b24 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.18 (hitcnt=155) 0xa23eaab3 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.19 (hitcnt=268) 0x9214fde3 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.21 (hitcnt=219) 0x39b93447 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.22 (hitcnt=157) 0x3945ec48 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.26 (hitcnt=279) 0xd46172da 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.46 (hitcnt=254) 0xe23088e0 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.5 (hitcnt=162) 0x2fb21acc 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.58 (hitcnt=241) 0x62d6b940 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.77 (hitcnt=166) 0x53a23558 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.78 (hitcnt=138) 0x6423b903 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.86 (hitcnt=239) 0x81013df8 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.11 (hitcnt=304) 0x281ded72 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.12 (hitcnt=172) 0x8401a45d 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.90 (hitcnt=194) 0x1ffc9e04 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.24 (hitcnt=258) 0xbae9a836 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.27 (hitcnt=157) 0x4da832fc 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.40 (hitcnt=205) 0xea8f6a60 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.8 (hitcnt=240) 0x91f8bf5e 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.85 (hitcnt=241) 0x84fef7cd 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.94 (hitcnt=248) 0xc5d6b35c 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.15 (hitcnt=262) 0x9b510c5e 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.3 (hitcnt=1810) 0x5e013f2d 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.100 (hitcnt=260) 0x230e3665 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.102 (hitcnt=235) 0xe4d0ce55 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.103 (hitcnt=206) 0x7a610cd3 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.17 (hitcnt=252) 0xcf032999 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.20 (hitcnt=165) 0xda98c7f4 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.29 (hitcnt=221) 0xf45b0d92 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.33 (hitcnt=239) 0x1aa2c37a 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.38 (hitcnt=251) 0x8b2877bc 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.42 (hitcnt=189) 0xbada43da 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.43 (hitcnt=241) 0x9464e2ef 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.44 (hitcnt=229) 0x8db3086a 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.45 (hitcnt=336) 0x0b0ad254 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.6 (hitcnt=187) 0x88235ad3 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.62 (hitcnt=242) 0x80b3ac74 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.68 (hitcnt=222) 0xf94de59e 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.7 (hitcnt=165) 0x714c7523 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.71 (hitcnt=157) 0x84fcb775 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.72 (hitcnt=244) 0x5f538ce5 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.82 (hitcnt=251) 0x8a185735 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.96 (hitcnt=229) 0x2e81763e 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.99 (hitcnt=240) 0x9810cbad 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.81 (hitcnt=234) 0xbe8e143f 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.32 (hitcnt=286) 0x33759ffe 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.84 (hitcnt=219) 0xaab157e7 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.60 (hitcnt=241) 0xc5b29ad5 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.28 (hitcnt=153) 0x95400d0e 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.69 (hitcnt=260) 0x347fa833 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.56 (hitcnt=167) 0x9e20e244 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.61 (hitcnt=228) 0x5469a9b7 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.66 (hitcnt=246) 0x806c7d7c 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.70 (hitcnt=379) 0x38797aab 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.48 (hitcnt=265) 0x5eb2cf3a 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.9 (hitcnt=214) 0x836035dc 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.106 (hitcnt=259) 0xbdedc807 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.105 (hitcnt=252) 0xb190fff9 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.107 (hitcnt=62483) 0x5c984e1d 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.108 (hitcnt=229) 0xebc537ad 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.109 (hitcnt=292) 0xfb159308 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.92 (hitcnt=842) 0x23be0424 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.53 (hitcnt=170) 0x5e170e68 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.111 (hitcnt=260) 0x6daf38af 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.112 (hitcnt=248) 0xa19e9860 
+  access-list untrust_access_in line 22 extended permit icmp any host 208.97.209.114 (hitcnt=222) 0xa195e8c6 
+access-list untrust_access_in line 23 extended permit tcp any object-group web.8080-grp eq 8080 0xe5f91f57 
+  access-list untrust_access_in line 23 extended permit tcp any host 208.97.209.2 eq 8080 (hitcnt=12823) 0xa9abb118 
+  access-list untrust_access_in line 23 extended permit tcp any host 208.97.209.60 eq 8080 (hitcnt=128) 0x4df187d0 
+  access-list untrust_access_in line 23 extended permit tcp any host 208.97.209.61 eq 8080 (hitcnt=122) 0x09266cc9 
+  access-list untrust_access_in line 23 extended permit tcp any host 208.97.209.106 eq 8080 (hitcnt=224) 0xc7b3830d 
+  access-list untrust_access_in line 23 extended permit tcp any host 208.97.209.105 eq 8080 (hitcnt=198) 0x75140dc6 
+  access-list untrust_access_in line 23 extended permit tcp any host 208.97.209.20 eq 8080 (hitcnt=127) 0xba02d410 
+access-list untrust_access_in line 24 extended permit icmp any any (hitcnt=737867) 0x9466830b 
+access-list untrust_access_in line 25 extended permit tcp any object-group peoplesoft-grp object-group peoplesoft 0xb3ee5ba6 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.66 eq 7012 (hitcnt=0) 0x8e9b9137 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.66 eq 7030 (hitcnt=0) 0xf90ad202 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.66 eq 7042 (hitcnt=0) 0xcb13dd06 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.66 eq 7532 (hitcnt=70423) 0xe74baac9 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.70 eq 7012 (hitcnt=0) 0xbb3a5649 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.70 eq 7030 (hitcnt=0) 0x3320c323 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.70 eq 7042 (hitcnt=0) 0x6555dd4e 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.70 eq 7532 (hitcnt=1674) 0x11284c87 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.78 eq 7012 (hitcnt=0) 0x80e986b0 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.78 eq 7030 (hitcnt=0) 0xe7c7157f 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.78 eq 7042 (hitcnt=0) 0xa371bcb7 
+  access-list untrust_access_in line 25 extended permit tcp any host 208.97.209.78 eq 7532 (hitcnt=0) 0x0f7a97ba 
+access-list untrust_access_in line 26 extended permit tcp any host 208.97.209.60 object-group peoplesoft_test 0xdb113025 
+  access-list untrust_access_in line 26 extended permit tcp any host 208.97.209.60 eq 8443 (hitcnt=4) 0x959e5c57 
+  access-list untrust_access_in line 26 extended permit tcp any host 208.97.209.60 eq 7530 (hitcnt=0) 0xe71244eb 
+  access-list untrust_access_in line 26 extended permit tcp any host 208.97.209.60 eq 7532 (hitcnt=0) 0xe2dda018 
+  access-list untrust_access_in line 26 extended permit tcp any host 208.97.209.60 eq 8080 (hitcnt=0) 0x4df187d0 
+access-list untrust_access_in line 27 extended permit tcp any host 208.97.209.60 eq 8443 (hitcnt=0) 0x959e5c57 
+access-list untrust_access_in line 28 extended permit tcp any host 208.97.209.60 eq 7530 (hitcnt=0) 0xe71244eb 
+access-list untrust_access_in line 29 extended permit tcp any host 208.97.209.60 eq 7532 (hitcnt=0) 0xe2dda018 
+access-list untrust_access_in line 30 extended permit tcp any host 208.97.209.60 eq 8080 (hitcnt=0) 0x4df187d0 
+access-list untrust_access_in line 31 extended permit tcp any host 208.97.209.61 eq 7532 (hitcnt=0) 0x38b922b1 
+access-list untrust_access_in line 32 extended permit tcp any host 208.97.209.61 eq 7530 (hitcnt=0) 0xa1f0a55b 
+access-list untrust_access_in line 33 extended permit tcp any host 208.97.209.61 eq 8443 (hitcnt=6) 0xca68d658 
+access-list untrust_access_in line 34 extended permit tcp any host 208.97.209.61 eq 8080 (hitcnt=0) 0x09266cc9 
+access-list untrust_access_in line 35 extended permit tcp any host 208.97.209.61 object-group peoplesoft_test 0x5ea22b10 
+  access-list untrust_access_in line 35 extended permit tcp any host 208.97.209.61 eq 8443 (hitcnt=0) 0xca68d658 
+  access-list untrust_access_in line 35 extended permit tcp any host 208.97.209.61 eq 7530 (hitcnt=0) 0xa1f0a55b 
+  access-list untrust_access_in line 35 extended permit tcp any host 208.97.209.61 eq 7532 (hitcnt=0) 0x38b922b1 
+  access-list untrust_access_in line 35 extended permit tcp any host 208.97.209.61 eq 8080 (hitcnt=0) 0x09266cc9 
+access-list untrust_access_in line 36 extended permit tcp any host 208.97.209.101 eq smtp (hitcnt=356845) 0x2c898479 
+access-list untrust_access_in line 37 extended permit tcp any host 208.97.209.51 eq 1935 (hitcnt=0) 0x205f6235 
+access-list untrust_access_in line 38 extended permit tcp any host 208.97.209.52 eq 1935 (hitcnt=21672) 0x3574f367 
+access-list untrust_access_in line 39 extended permit tcp any object-group web.special-grp object-group web.special 0xd7608139 
+  access-list untrust_access_in line 39 extended permit tcp any host 208.97.209.81 eq 81 (hitcnt=19) 0xc419c0dd 
+  access-list untrust_access_in line 39 extended permit tcp any host 208.97.209.81 eq 82 (hitcnt=2) 0xfab560a3 
+  access-list untrust_access_in line 39 extended permit tcp any host 208.97.209.81 eq 85 (hitcnt=0) 0x929b1de7 
+  access-list untrust_access_in line 39 extended permit tcp any host 208.97.209.81 eq 90 (hitcnt=0) 0x34a0b83d 
+  access-list untrust_access_in line 39 extended permit tcp any host 208.97.209.81 eq 95 (hitcnt=0) 0xda2c0bbe 
+access-list untrust_access_in line 40 extended permit object-group WEB_SRV_8003 any object-group web.8003-grp 0x6d98f3ca 
+  access-list untrust_access_in line 40 extended permit tcp any host 208.97.209.84 eq 8003 (hitcnt=0) 0xd8fd7071 
+access-list untrust_access_in line 41 extended permit tcp any host 208.97.209.69 eq ftp-data (hitcnt=0) 0xb9edc173 
+access-list untrust_access_in line 42 extended permit tcp any host 208.97.209.110 eq smtp (hitcnt=153822) 0xc0a5b4b4 
+access-list untrust_access_in line 43 extended permit tcp any host 208.97.209.57 eq 8090 (hitcnt=3) 0xd1854e41 
+access-list untrust_access_in line 44 extended deny ip host 212.15.88.30 host 208.97.209.2 (hitcnt=0) 0xfd339ffd 
+access-list untrust_access_in line 45 extended permit tcp any host 208.97.209.54 eq 999 (hitcnt=0) 0xa610d7fa 
+access-list untrust_access_in line 46 extended permit tcp any host 208.97.209.54 eq www (hitcnt=1042) 0x3b9ac293 
+access-list untrust_access_in line 47 extended permit tcp any host 208.97.209.54 eq https (hitcnt=9914) 0xed6b64f6 
+access-list untrust_access_in line 48 extended permit tcp any host 208.97.209.54 eq 8443 (hitcnt=8) 0x46d9a8ed 
+access-list untrust_access_in line 49 extended permit tcp any host 208.97.209.92 eq 9999 (hitcnt=6) 0x39ccc01a 
+access-list untrust_access_in line 50 extended permit ip any host 208.97.209.59 (hitcnt=7843625) 0xf2cf382a 
+access-list untrust_access_in line 51 extended permit tcp any host 208.97.209.14 (hitcnt=3351) 0xb8a26016 
+access-list untrust_access_in line 52 extended permit tcp any host 208.97.209.75 eq www (hitcnt=393) 0x33a32192 
+access-list untrust_access_in line 53 extended permit tcp any host 208.97.209.75 eq https (hitcnt=1599) 0x1507a378 
+access-list untrust_access_in line 54 extended permit tcp any host 208.97.209.76 eq www (hitcnt=6019) 0xc2715f30 
+access-list untrust_access_in line 55 extended permit tcp any host 208.97.209.76 eq https (hitcnt=428) 0x0ca94f16 
+access-list untrust_access_in line 56 extended permit tcp any host 208.97.209.116 eq www (hitcnt=6775) 0xb74d8485 
+access-list untrust_access_in line 57 extended permit tcp any host 208.97.209.116 eq https (hitcnt=83927) 0x24262c50 
+access-list untrust_access_in line 58 extended permit tcp any host 208.97.209.117 eq www (hitcnt=211) 0x31e1d14b 
+access-list untrust_access_in line 59 extended permit tcp any host 208.97.209.117 eq https (hitcnt=71) 0x11978fb3 
+access-list untrust_access_in line 60 extended permit icmp any host 208.97.209.115 (hitcnt=0) 0xcad41f5b 
+access-list untrust_access_in line 61 extended permit icmp any host 208.97.209.116 (hitcnt=0) 0xefb6cc73 
+access-list untrust_access_in line 62 extended permit icmp any host 208.97.209.117 (hitcnt=0) 0xdb402b9f 
+access-list untrust_access_in line 63 extended permit icmp any host 208.97.209.74 (hitcnt=0) 0x82d916cb 
+access-list untrust_access_in line 64 extended permit icmp any host 208.97.209.75 (hitcnt=0) 0x4b110e5a 
+access-list untrust_access_in line 65 extended permit icmp any host 208.97.209.76 (hitcnt=0) 0xae476fe7 
+access-list untrust_access_in line 66 extended permit tcp any host 208.97.209.74 eq https (hitcnt=339573) 0x53c7da87 
+access-list untrust_access_in line 67 extended permit tcp any host 208.97.209.74 eq 5061 (hitcnt=36067) 0x45d8ce82 
+access-list untrust_access_in line 68 extended permit udp any host 208.97.209.75 eq 443 (hitcnt=1) 0xbeba808c 
+access-list untrust_access_in line 69 extended permit udp any host 208.97.209.75 eq 3478 (hitcnt=761) 0x3ac4ce0b 
+access-list untrust_access_in line 70 extended permit tcp any host 208.97.209.75 range 50000 59999 (hitcnt=5276) 0x5ba1f105 
+access-list untrust_access_in line 71 extended permit udp any host 208.97.209.75 range 50000 59999 (hitcnt=11777) 0xadc62e78 
+access-list untrust_access_in line 72 extended permit ip host 59.178.209.151 host 208.97.209.115 (hitcnt=0) 0x984088db 
+access-list untrust_access_in line 73 extended permit ip host 59.178.209.151 host 208.97.209.116 (hitcnt=0) 0x430900ba 
+access-list untrust_access_in line 74 extended permit tcp any host 208.97.209.115 eq www (hitcnt=212) 0x40dfcff6 
+access-list untrust_access_in line 75 extended permit tcp any host 208.97.209.115 eq https (hitcnt=4920) 0xca04f2fb 
+access-list untrust_access_in line 76 extended permit tcp any host 208.97.209.115 eq 445 (hitcnt=409) 0xe790d16e 
+access-list untrust_access_in line 77 extended permit tcp any host 208.97.209.115 eq ldap (hitcnt=2) 0xd8996a4b 
+access-list untrust_access_in line 78 extended permit tcp any host 208.97.209.115 eq 1701 (hitcnt=2) 0x58294a31 
+access-list untrust_access_in line 79 extended permit tcp any host 208.97.209.115 range 45000 50000 (hitcnt=14356) 0x1899b85d 
+access-list untrust_access_in line 80 extended permit tcp any host 208.97.209.116 eq 445 (hitcnt=1020) 0x155a843f 
+access-list untrust_access_in line 81 extended permit tcp any host 208.97.209.116 eq ldap (hitcnt=2) 0x2aa8b9c0 
+access-list untrust_access_in line 82 extended permit tcp any host 208.97.209.116 eq 1701 (hitcnt=0) 0x6b895961 
+access-list untrust_access_in line 83 extended permit tcp any host 208.97.209.116 range 45000 50000 (hitcnt=8704) 0x4943ced7 
+access-list untrust_access_in line 84 extended permit udp any host 208.97.209.115 eq isakmp (hitcnt=1311) 0x59217afc 
+access-list untrust_access_in line 85 extended permit udp any host 208.97.209.115 eq 1701 (hitcnt=9) 0x486b567b 
+access-list untrust_access_in line 86 extended permit udp any host 208.97.209.115 eq 4500 (hitcnt=1250) 0x41218cc9 
+access-list untrust_access_in line 87 extended permit udp any host 208.97.209.116 eq isakmp (hitcnt=2) 0x0f30d4b7 
+access-list untrust_access_in line 88 extended permit udp any host 208.97.209.116 eq 1701 (hitcnt=0) 0xc08b06d9 
+access-list untrust_access_in line 89 extended permit udp any host 208.97.209.116 eq 4500 (hitcnt=0) 0x4de84194 
+access-list untrust_access_in line 90 extended permit ip any host 208.97.209.116 (hitcnt=108400) 0x4ab0bc56 
+access-list untrust_access_in line 91 extended permit ip any host 208.97.206.115 (hitcnt=0) 0xd70927f1 
+access-list untrust_access_in line 92 extended permit esp any any (hitcnt=8211) 0x5ef059b8 
+access-list untrust_access_in line 93 extended permit udp host 122.98.118.5 any eq isakmp (hitcnt=288) 0x2665036d 
+access-list untrust_access_in line 94 extended permit udp host 122.98.118.5 any eq 4500 (hitcnt=0) 0x949227fc 
+access-list untrust_access_in line 95 extended permit esp host 122.98.118.5 any (hitcnt=0) 0x963e3c18 
+access-list untrust_access_in line 96 extended permit tcp any host 208.97.209.87 eq https (hitcnt=85) 0xa4896dab 
+access-list untrust_access_in line 97 extended permit tcp any host 208.97.209.87 eq 3544 (hitcnt=0) 0x3c076f9c 
+access-list untrust_access_in line 98 extended permit tcp any host 208.97.209.87 eq 41 (hitcnt=0) 0xdf1ee77b 
+access-list untrust_access_in line 99 extended permit tcp any host 208.97.209.89 eq https (hitcnt=88) 0xabffb63b 
+access-list untrust_access_in line 100 extended permit tcp any host 208.97.209.89 eq 3544 (hitcnt=0) 0x65070839 
+access-list untrust_access_in line 101 extended permit tcp any host 208.97.209.89 eq 41 (hitcnt=0) 0x1af4bbde 
+access-list untrust_1_cryptomap; 1 elements; name hash: 0x775de29f
+access-list untrust_1_cryptomap line 1 extended permit ip object-group LocalSources-4-ZScaler-Tunnel any 0x93092dd2 
+  access-list untrust_1_cryptomap line 1 extended permit ip host 192.168.115.80 any (hitcnt=0) 0x9966d255 
+access-list untrust_cryptomap_1; 1 elements; name hash: 0xb3f28d44
+access-list untrust_cryptomap_1 line 1 extended permit ip object-group LocalSources-4-ZScaler-Tunnel any 0x2b8b25e9 
+  access-list untrust_cryptomap_1 line 1 extended permit ip host 192.168.115.80 any (hitcnt=322) 0x5d50fa1a 
+access-list OO_temp_untrust_map1; 2 elements; name hash: 0xe636dd1c (dynamic)
+access-list OO_temp_untrust_map1 line 1 extended permit ip host 66.54.173.74 host 104.129.194.35 (hitcnt=377) 0x246a4ae0 
+access-list OO_temp_untrust_map1 line 2 extended permit ip host 66.54.173.74 host 199.168.151.112 (hitcnt=0) 0xed95158a 
+asa2-ext-right#                    
