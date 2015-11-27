@@ -6,3 +6,6 @@ C:\Dev\IPLogParser\source\IPLogParser\bin\Debug\CommandLine.xml
 C:\Dev\IPLogParser\source\IPLogParser\obj\Debug\IPLogParser.csprojResolveAssemblyReference.cache
 C:\Dev\IPLogParser\source\IPLogParser\obj\Debug\IPLogParser.exe
 C:\Dev\IPLogParser\source\IPLogParser\obj\Debug\IPLogParser.pdb
+C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\bin\Debug\IPLogParser.exe.config
+C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\obj\Debug\IPLogParser.exe
+C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\obj\Debug\IPLogParser.pdb

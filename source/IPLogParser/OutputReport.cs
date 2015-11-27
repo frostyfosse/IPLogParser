@@ -8,9 +8,23 @@ namespace IPLogParser
 {
     public class OutputReport
     {
-        public OutputReport()
+        static OutputReport()
         {
-
+            LineTypeDictionary = new Dictionary<string, string>();
+            LineTypeDictionary.Add("nat (transport", "NAT");
+            LineTypeDictionary.Add("IP LOCAL POOL", "IP Local Pool");
+            LineTypeDictionary.Add("IP ADDRESS", "General IP Listing");
+            LineTypeDictionary.Add("OBJECT NETWORK", "Network Object");
+            LineTypeDictionary.Add("NETWORK-OBJECT", "Network Object");
+            LineTypeDictionary.Add("SUBNET", "Subnet");
+            LineTypeDictionary.Add("HOST", "Host");
+            LineTypeDictionary.Add("ACCESS-LIST", "Access List");
+            LineTypeDictionary.Add("LOGGING HOST", "Logging Host");
+            LineTypeDictionary.Add("ROUTE TRANSPORT", "Route Transport");
+            LineTypeDictionary.Add("AAA-SERVER", "aaa-server");
+            LineTypeDictionary.Add("SSH", "Ssh");
+            LineTypeDictionary.Add("WINS-SERVER", "wins-server");
+            LineTypeDictionary.Add("DNS-SERVER", "dns-server");
         }
 
         /// <summary>
@@ -20,7 +34,7 @@ namespace IPLogParser
         public string LineType { get; set; }
 
         List<string> _ipAddresses = new List<string>();
-        public List<string> IPAddresses 
+        public List<string> IPAddresses
         {
             get { return _ipAddresses; }
             set { _ipAddresses = value; }
@@ -48,34 +62,11 @@ namespace IPLogParser
 
         Dictionary<string, string> _lineTypeDictionary = new Dictionary<string, string>();
 
-        public Dictionary<string, string> LineTypeDictionary 
-        {
-            get { return _lineTypeDictionary; }
-            set { _lineTypeDictionary = value; }
-        }
+        static public Dictionary<string, string> LineTypeDictionary { get; set; }
 
         public static string GenerateHeaderLine()
         {
             return "LineType,Port,IPAddresses";
-        }
-
-        void GenerateLineTypeDictionary()
-        {
-            LineTypeDictionary.Add("nat (transport", "NAT");
-            LineTypeDictionary.Add("IP LOCAL POOL", "IP Local Pool");
-            LineTypeDictionary.Add("IP ADDRESS", "General IP Listing");
-            LineTypeDictionary.Add("OBJECT NETWORK", "Network Object");
-            LineTypeDictionary.Add("NETWORK-OBJECT", "Network Object");
-            LineTypeDictionary.Add("SUBNET", "Subnet");
-            LineTypeDictionary.Add("HOST", "Host");
-            LineTypeDictionary.Add("ACCESS-LIST", "Access List");
-            LineTypeDictionary.Add("LOGGING HOST", "Logging Host");
-            LineTypeDictionary.Add("ROUTE TRANSPORT", "Route Transport");
-            LineTypeDictionary.Add("AAA-SERVER", "aaa-server");
-            LineTypeDictionary.Add("SSH", "Ssh");
-            LineTypeDictionary.Add("WINS-SERVER", "wins-server");
-            LineTypeDictionary.Add("DNS-SERVER", "dns-server");
-
         }
     }
 }
