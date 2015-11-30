@@ -63,8 +63,9 @@ namespace IPLogParser
 
         List<string> ProcessFileData(List<string> fileData)
         {
+            var reports = new List<OutputReport>();
             var result = new List<string>();
-            result.Add(OutputReport.GenerateHeaderLine());
+            //result.Add(OutputReport.GenerateHeaderLine());
 
             foreach (var line in fileData)
             {
@@ -74,17 +75,19 @@ namespace IPLogParser
 
                 if (isAccessList)
                     ExtractAccessListData(report, text);
-                else
-                    ExtractIPs(report, text);
+                //else
+                //    ExtractIPs(report, text);
 
                 if (string.IsNullOrEmpty(report.Port) && report.IPAddresses.Count == 0)
                     continue;
 
-                var textResult = report.ToString();
-
-                if (!string.IsNullOrEmpty(textResult.Replace(",", null)))
-                    result.Add(textResult);
+                reports.Add(report);
             }
+
+            int ipColumnCount = reports.Select(x => x.IPAddresses.Count).Max();
+
+            result.Add(OutputReport.GenerateHeaderLine(ipColumnCount));
+            reports.ForEach(x => result.Add(x.ToString()));
 
             return result;
         }

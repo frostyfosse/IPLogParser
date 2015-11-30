@@ -8,24 +8,35 @@ namespace IPLogParser
 {
     public class OutputReport
     {
-        static OutputReport()
+        public static class KnownTokens
         {
-            LineTypeDictionary = new Dictionary<string, string>();
-            LineTypeDictionary.Add("nat (transport", "NAT");
-            LineTypeDictionary.Add("IP LOCAL POOL", "IP Local Pool");
-            LineTypeDictionary.Add("IP ADDRESS", "General IP Listing");
-            LineTypeDictionary.Add("OBJECT NETWORK", "Network Object");
-            LineTypeDictionary.Add("NETWORK-OBJECT", "Network Object");
-            LineTypeDictionary.Add("SUBNET", "Subnet");
-            LineTypeDictionary.Add("HOST", "Host");
-            LineTypeDictionary.Add("ACCESS-LIST", "Access List");
-            LineTypeDictionary.Add("LOGGING HOST", "Logging Host");
-            LineTypeDictionary.Add("ROUTE TRANSPORT", "Route Transport");
-            LineTypeDictionary.Add("AAA-SERVER", "aaa-server");
-            LineTypeDictionary.Add("SSH", "Ssh");
-            LineTypeDictionary.Add("WINS-SERVER", "wins-server");
-            LineTypeDictionary.Add("DNS-SERVER", "dns-server");
+            public const string AccessList = "ACCESS-LIST";
+            public const string Nat = "NAT";
         }
+
+        public OutputReport()
+        {
+        }
+
+        //static OutputReport()
+        //{
+        //    //Not sure if I need/want this anymore.
+        //    LineTypeDictionary = new Dictionary<string, string>();
+        //    LineTypeDictionary.Add("nat (transport", "NAT");
+        //    LineTypeDictionary.Add("IP LOCAL POOL", "IP Local Pool");
+        //    LineTypeDictionary.Add("IP ADDRESS", "General IP Listing");
+        //    LineTypeDictionary.Add("OBJECT NETWORK", "Network Object");
+        //    LineTypeDictionary.Add("NETWORK-OBJECT", "Network Object");
+        //    LineTypeDictionary.Add("SUBNET", "Subnet");
+        //    LineTypeDictionary.Add("HOST", "Host");
+        //    LineTypeDictionary.Add(KnownTokens.AccessList, "Access List");
+        //    LineTypeDictionary.Add("LOGGING HOST", "Logging Host");
+        //    LineTypeDictionary.Add("ROUTE TRANSPORT", "Route Transport");
+        //    LineTypeDictionary.Add("AAA-SERVER", "aaa-server");
+        //    LineTypeDictionary.Add("SSH", "Ssh");
+        //    LineTypeDictionary.Add("WINS-SERVER", "wins-server");
+        //    LineTypeDictionary.Add("DNS-SERVER", "dns-server");
+        //}
 
         /// <summary>
         /// This is used to determine what type of information was found. In the logs provided each line could
@@ -50,23 +61,40 @@ namespace IPLogParser
         /// </returns>
         public override string ToString()
         {
-            StringBuilder ipAddresses = new StringBuilder();
+            StringBuilder result = new StringBuilder();
+            //IPAddresses.RemoveAll(null);
+            result.AppendFormat("{0},{1}", LineType, Port);
 
-            if (IPAddresses.Count == 1)
-                ipAddresses.Append(IPAddresses.First());
-            else if (IPAddresses.Count > 1)
-                IPAddresses.ForEach(x => ipAddresses.AppendFormat("{0}|", x));
+            IPAddresses.ForEach(x => result.AppendFormat(",{0}", x));
 
-            return string.Format("{0},{1},{2}", LineType, Port, ipAddresses.ToString());
+            var returnValue = result.ToString();
+            return returnValue;
         }
 
-        Dictionary<string, string> _lineTypeDictionary = new Dictionary<string, string>();
+        //Dictionary<string, string> _lineTypeDictionary = new Dictionary<string, string>();
 
-        static public Dictionary<string, string> LineTypeDictionary { get; set; }
+        //static public Dictionary<string, string> LineTypeDictionary { get; set; }
 
-        public static string GenerateHeaderLine()
+        List<string> HeaderLine { get; set; }
+
+        public static string GenerateHeaderLine(int ipAddressCount)
         {
-            return "LineType,Port,IPAddresses";
+            var result = "LineType,Port";
+
+            if (ipAddressCount <= 1)
+            {
+                string.Join(",", new[] { result, "IpAddress" });
+                return result;
+            }
+
+            string ipAddressColumns = null;
+
+            for (int i = 1; i <= ipAddressCount; i++)
+                ipAddressColumns = string.Join(",", new[] { ipAddressColumns, string.Format("IpAddress{0}", i) });
+
+            result = string.Format("{0}{1}", result, ipAddressColumns);
+
+            return result;
         }
     }
 }
