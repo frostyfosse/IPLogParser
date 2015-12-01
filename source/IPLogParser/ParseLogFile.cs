@@ -99,11 +99,10 @@ namespace IPLogParser
             var words = text.Split(' ').ToList();
             var startPointer = words.FindIndex(x => x.Contains("eq"));
             var endPointer = words.FindIndex(x => x.Contains("(hitcnt="));
-            string port = null;
 
             if (endPointer > 0 && startPointer > 0)
             {
-                port = words[endPointer - 1];
+                var port = words[endPointer - 1];
 
                 if (!port.Contains("255."))
                     report.Port = port;
