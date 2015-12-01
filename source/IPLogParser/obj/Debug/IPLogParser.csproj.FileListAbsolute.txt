@@ -13,4 +13,3 @@ C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\bin\Debug\IPLogPa
 C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\bin\Debug\IPLogParser.pdb
 C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\bin\Debug\CommandLine.dll
 C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\bin\Debug\CommandLine.xml
-C:\Users\fosse\Documents\GitHub\IPLogParser\source\IPLogParser\obj\Debug\IPLogParser.csprojResolveAssemblyReference.cache
